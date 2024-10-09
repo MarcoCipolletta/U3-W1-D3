@@ -30,12 +30,10 @@ export class HomeComponent {
             arrayIndexPosts.push(randomPostIndex);
           }
         }
-        console.log(this.relatedPosts);
       });
   }
 
   ngOnInit() {
     this.getposts();
-    console.log(this.posts);
   }
 }
