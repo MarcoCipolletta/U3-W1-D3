@@ -10,6 +10,7 @@ export class HomeComponent {
   posts: PostInterface[] = [];
   firstpost!: PostInterface;
   relatedPosts: PostInterface[] = [];
+  isLoading: boolean = true;
 
   getposts() {
     fetch('db.json')
@@ -30,6 +31,7 @@ export class HomeComponent {
             arrayIndexPosts.push(randomPostIndex);
           }
         }
+        this.isLoading = false;
       });
   }
 

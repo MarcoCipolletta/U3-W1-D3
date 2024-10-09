@@ -1,18 +1,25 @@
 <div class="container">
   <h1 class="text-center my-4">In evidenza</h1>
   <div class="row justify-content-center">
-    <div class="col col-12 col-md-7">
+    <div *ngIf="!isLoading" class="col col-12 col-md-7">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{ firstpost.title }}</h5>
+          <h5 class="card-title">
+            {{ firstpost.title }}
+          </h5>
 
-          <p class="card-text">{{ firstpost.body }}</p>
+          <p class="card-text">
+            {{ firstpost.body }}
+          </p>
         </div>
       </div>
     </div>
   </div>
   <h2 class="mt-4">Potrebbero piacerti:</h2>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+  <div
+    *ngIf="!isLoading"
+    class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"
+  >
     <div class="col" *ngFor="let post of relatedPosts">
       <div class="card">
         <div class="card-body">
